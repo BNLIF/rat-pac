@@ -25,7 +25,7 @@
 /vis/viewer/set/upVector 0.0 0.0 1.0
 /vis/viewer/set/viewpointThetaPhi 90 180 
 /vis/viewer/set/style s
-/vis/viewer/zoomTo 2
+/vis/viewer/zoomTo 4
 /vis/viewer/addCutawayPlane 0 0 0 cm 1 0 0
 
 

@@ -121,8 +121,7 @@ namespace RAT {
 	{
 	    sub_type_array = lpos_table->GetIArray("sub_type");
 	}
-
-        // Find mother
+	
 	string mother_name = table->GetS("mother");
 
 	// direction of individual solids.  Default is that +z is orientation pointing direction
@@ -182,20 +181,33 @@ namespace RAT {
 	} catch (DBNotFoundError &e) { }
 
 
+	//Xin: if mother phys volume is constructed by tubearray or other array, need to append _num
+	int mother_array_flag=0;
+	try { mother_array_flag = table->GetI("mother_array_flag"); }
+	catch (DBNotFoundError &e){ }
+	
 	// get pointer to physical mother volume
-	G4VPhysicalVolume* phys_mother = GeoFactory::FindPhysMother(mother_name);
-	if (phys_mother == 0)
+	G4VPhysicalVolume* phys_mother;
+	if (mother_array_flag==0){
+	  phys_mother= GeoFactory::FindPhysMother(mother_name);
+	  if (phys_mother == 0)
 	    Log::Die("GeoBuilder error: Solid mother physical volume " + mother_name
 		     +" not found");
-
+	}
+	
 	for (int solidID = start_solid_num; solidID < max_solids; solidID++)
 	{
 	    if ((sub_type == -1) || (sub_type == sub_type_array[solidID]))
 	    {
 
-		// name
-		string solidname = volume_name + "_" + ::to_string(solidID);
+	      //if mothers
+	      if (mother_array_flag!=0){
+		string tmp = mother_name+ "_" + ::to_string(solidID);
+		phys_mother= GeoFactory::FindPhysMother(tmp);
+	      }
 
+	      // name
+		string solidname = volume_name + "_" + ::to_string(solidID);
 
 		// position
 		G4ThreeVector solidpos(pos_x[solidID], pos_y[solidID], pos_z[solidID]);
