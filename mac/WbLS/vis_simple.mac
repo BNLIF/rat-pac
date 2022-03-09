@@ -3,7 +3,7 @@
 
 #/rat/db/set DETECTOR experiment "Watchman"
 #/rat/db/load WbLS/BNL_PMT.ratdb
-/rat/db/load WbLS/BNL_1T_BOT_ARRAY.ratdb
+/rat/db/load WbLS/BNL_1T_PMT_ARRAY.ratdb
 #/rat/db/set GEO[inner_pmts] orientation "manual" #can change to "point" to have PMTs pointed towards center
 /rat/db/set DETECTOR geo_file "WbLS/simple.geo"
 
