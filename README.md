@@ -1,3 +1,5 @@
+** This repositroy is deprecated. Please use https://github.com/OGgroup/ratpac-two for WbLS simulation (this is a private repo; ask for permission) **
+
 # RAT (is an Analysis Tool), Watchman Edition
 [![Documentation Status](https://readthedocs.org/projects/ratpac-watchman/badge/?version=latest)](https://ratpac-watchman.readthedocs.io/en/latest/?badge=latest)
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/aitwatchman/ratpac)](https://hub.docker.com/r/aitwatchman/ratpac)
