@@ -316,6 +316,31 @@ z_origin: [ -40.0d, 0.0d, 0.0d, 40.0d, -142.0d ],
 
 {
 name: "PMT",
+index: "r7081om",
+valid_begin: [0,0],
+valid_end: [0,0],
+
+dynode_material: "stainless_steel",
+glass_material: "glass",
+pmt_vacuum_material: "pmt_vacuum",
+photocathode_surface: "photocathode_R7081HQE",
+photocathode_MINrho: 110.0d,
+photocathode_MAXrho: 126.5d,
+mirror_surface: "mirror",
+dynode_surface: "stainless_steel",
+
+dynode_radius: 27.5,
+dynode_top:   -5.9,
+wall_thickness: 3.0,
+
+z_edge: [ 40.0d, 40.0d, 39.5d, 39.0d, -39.0d, -39.5d, -40.0d, -40.0d, -80.0d ],
+rho_edge: [ 0.0d, 110.0d, 110.5d, 111.0d, 111.0d, 110.5d, 110.0d,50.0d, 50.0d ],
+z_origin: [ 40.0d, 40.0d, -20.0d, 39.0d, -39.0d, 20.0d, -40.0d, -40.0d, -80.0d ],
+
+}
+
+{
+name: "PMT",
 index: "r3600",
 valid_begin: [0,0],
 valid_end: [0,0],
